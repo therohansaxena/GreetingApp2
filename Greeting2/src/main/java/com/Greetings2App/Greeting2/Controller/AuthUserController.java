@@ -30,8 +30,4 @@ public class AuthUserController {
     public ResponseEntity<String> login(@Valid @RequestBody LoginDTO loginDTO){
          return ResponseEntity.ok(authenticationService.loginUser(loginDTO));
      }
-    @PostMapping(path="/sendMail")
-    public String sendMail(@RequestBody MailDTO user){ emailService.sendEmail(user.getTo(), user.getSubject(), user.getBody());
-        return "Mail Sent";
-    }
 }
